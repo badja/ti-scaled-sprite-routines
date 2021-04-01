@@ -1,0 +1,57 @@
+Scaled Sprite Routines v1.1
+===========================
+by Badja <http://badja.calc.org> <badja@calc.org> 21 December 1999
+Optimized by Eric Piel < Eric.Piel@etu.utc.fr > 30 May 2000
+
+This archive contains two sprite routines which allow you to draw sprites at
+a fraction of their stored size. The sprites may be drawn with a scale factor
+anywhere from 0.4 to 100% -- so sprites can only be scaled down, not enlarged.
+Also included is a supplementary routine for calculating scaled sprite sizes.
+
+The sprites have no size limit and may be LDed, ORed or XORed to the graph buffer.
+See the comments in the appropriate routine INC file for details on each
+routine. See the sample programs for examples on how to use the routines.
+
+You may use these routines in your own programs, as long as you give me
+credit.
+
+The following files are in this archive:
+----------------------------------------
+scalespr.txt  This documentation
+
+scalespr.inc  putScaledSprite routine
+scaleclp.inc  putScaledSpriteClip routine
+scalegss.inc  getScaledSize routine
+
+scalespr.asm  Sample source code using putScaledSprite and getScaledSize
+scalespr.82p  Ready-to-run program file for CrASH on the TI-82
+scalespr.83p  Ready-to-run program file for Ion on the TI-83
+scalespr.83x  Ready-to-run program file for Ion on the TI-83 Plus
+
+scaleclp.asm  Sample source code using putScaledSpriteClip
+scaleclp.82p  Ready-to-run program file for CrASH on the TI-82
+scaleclp.83p  Ready-to-run program file for Ion on the TI-83
+scaleclp.83x  Ready-to-run program file for Ion on the TI-83 Plus
+
+
+putScaledSprite
+---------------
+This routine is smaller and faster. Use this if you don't require clipping.
+
+getScaledSpriteClip
+-------------------
+This routine is larger and slower, but provides clipping so that any parts
+of the sprite off-screen will not be drawn.
+
+getScaledSize
+-------------
+This is a handy little routine which calculates the size that the sprite will
+be after scaling. It is useful for determining the coordinates at which a
+sprite is to be displayed when the scaled size is unknown.
+
+
+Note : To compile the demo programs for the TI82 you have to uncomment the line
+;#define TI82
+at the beginning of the file.
+
+Send any comments, ideas, or other feedback to badja@alphalink.com.au
